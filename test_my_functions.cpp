@@ -1,4 +1,6 @@
+#include <iostream>
 #include "my_functions.h"
+
 
 #define BOOST_TEST_DYN_LINK
 #define BOOST_TEST_MODULE my_test_module
@@ -8,6 +10,12 @@ BOOST_AUTO_TEST_SUITE(my_functions)
 
 BOOST_AUTO_TEST_CASE(add_works)
 {
+  #ifndef NDEBUG
+  std::cout << "Debug mode\n";
+  #else
+  std::cout << "Release mode\n";
+  #endif
+
   BOOST_CHECK(add(1, 1) == 2);
   BOOST_CHECK(add(1, 2) == 3);
   BOOST_CHECK(add(1, 3) == 4);
