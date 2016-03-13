@@ -36,3 +36,7 @@ Makefile
 travis_qmake_gcc_cpp98_gcov
 travis_qmake_gcc_cpp98
 travis_qmake_gcc_cpp11
+travis_qmake_gcc_cpp11_boost_test_exe
+travis_qmake_gcc_cpp11_boost_test_test
+clean
+Makefile.*
