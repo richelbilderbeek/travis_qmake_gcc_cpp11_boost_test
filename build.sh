@@ -1,0 +1,7 @@
+#!/bin/bash
+qmake travis_qmake_gcc_cpp11_boost_test_exe.pro
+make
+./travis_qmake_gcc_cpp11_boost_test_exe
+qmake travis_qmake_gcc_cpp11_boost_test_test.pro
+make
+./travis_qmake_gcc_cpp11_boost_test_test
