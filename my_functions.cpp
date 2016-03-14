@@ -1,6 +1,6 @@
 #include "my_functions.h"
 
-int add(int i, int j)
+int add(const int i, const int j) noexcept
 {
   return i + j;
 }
