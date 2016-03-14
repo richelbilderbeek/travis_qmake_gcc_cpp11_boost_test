@@ -1,8 +1,7 @@
 #include "my_functions.h"
 #include <fstream>
 
-int main()
-{
+int main() {
   #ifndef NDEBUG
   std::ofstream f("exe_debug.txt");
   #else
