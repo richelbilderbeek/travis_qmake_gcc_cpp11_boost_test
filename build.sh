@@ -8,7 +8,6 @@ then
   exit 1
 fi
 
-./clean.sh
 qmake travis_qmake_gcc_cpp11_boost_test_exe.pro
 make release
 ./travis_qmake_gcc_cpp11_boost_test_exe
@@ -18,7 +17,6 @@ then
   exit 1
 fi
 
-./clean.sh
 qmake travis_qmake_gcc_cpp11_boost_test_test.pro
 make debug
 ./travis_qmake_gcc_cpp11_boost_test_test
@@ -28,7 +26,6 @@ then
   exit 1
 fi
 
-./clean.sh
 qmake travis_qmake_gcc_cpp11_boost_test_test.pro
 make release
 ./travis_qmake_gcc_cpp11_boost_test_test
@@ -37,5 +34,3 @@ then
   echo "ERROR: Cannot find test_release.txt"
   exit 1
 fi
-
-exit 0
