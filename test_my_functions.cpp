@@ -1,4 +1,4 @@
-#include <iostream>
+#include <fstream>
 #include "my_functions.h"
 
 
@@ -11,15 +11,17 @@ BOOST_AUTO_TEST_SUITE(my_functions)
 BOOST_AUTO_TEST_CASE(add_works)
 {
   #ifndef NDEBUG
-  std::cout << "Debug mode\n";
+  std::ofstream f("exe_debug.txt");
   #else
-  std::cout << "Release mode\n";
+  std::ofstream f("exe_release.txt");
   #endif
 
   BOOST_CHECK(add(1, 1) == 2);
   BOOST_CHECK(add(1, 2) == 3);
   BOOST_CHECK(add(1, 3) == 4);
   BOOST_CHECK(add(1, 4) == 5);
+
+  f << "OK\n";
 }
 
 BOOST_AUTO_TEST_SUITE_END()
