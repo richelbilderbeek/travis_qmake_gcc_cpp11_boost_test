@@ -12,7 +12,7 @@ fi
 qmake travis_qmake_gcc_cpp11_boost_test_exe.pro
 make release
 ./travis_qmake_gcc_cpp11_boost_test_exe
-if [ ! -f exe_release.WRONG ]
+if [ ! -f exe_release.txt ]
 then
   echo "ERROR: Cannot find exe_release.txt"
   exit 1
