@@ -22,7 +22,7 @@ fi
 qmake travis_qmake_gcc_cpp11_boost_test_test.pro
 make debug
 ./travis_qmake_gcc_cpp11_boost_test_test
-if [ ! -f test_debug.WRONG ]
+if [ ! -f test_debug.txt ]
 then
   echo "ERROR: Cannot find test_debug.txt"
   exit 1
