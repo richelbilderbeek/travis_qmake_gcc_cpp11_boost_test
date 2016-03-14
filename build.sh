@@ -2,7 +2,7 @@
 qmake travis_qmake_gcc_cpp11_boost_test_exe.pro
 make debug
 ./travis_qmake_gcc_cpp11_boost_test_exe
-if [ ! -f exe_debug.txt ]
+if [ ! -f exe_debug.WRONG ]
 then
   exit 1
 fi
@@ -11,7 +11,7 @@ fi
 qmake travis_qmake_gcc_cpp11_boost_test_exe.pro
 make release
 ./travis_qmake_gcc_cpp11_boost_test_exe
-if [ ! -f exe_release.txt ]
+if [ ! -f exe_release.WRONG ]
 then
   exit 1
 fi
@@ -20,7 +20,7 @@ fi
 qmake travis_qmake_gcc_cpp11_boost_test_test.pro
 make debug
 ./travis_qmake_gcc_cpp11_boost_test_test
-if [ ! -f test_debug.txt ]
+if [ ! -f test_debug.WRONG ]
 then
   exit 1
 fi
@@ -29,7 +29,7 @@ fi
 qmake travis_qmake_gcc_cpp11_boost_test_test.pro
 make release
 ./travis_qmake_gcc_cpp11_boost_test_test
-if [ ! -f test_release.txt ]
+if [ ! -f test_release.WRONG ]
 then
   exit 1
 fi
