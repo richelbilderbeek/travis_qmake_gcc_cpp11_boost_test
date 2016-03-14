@@ -11,9 +11,9 @@ BOOST_AUTO_TEST_SUITE(my_functions)
 BOOST_AUTO_TEST_CASE(add_works)
 {
   #ifndef NDEBUG
-  std::ofstream f("exe_debug.txt");
+  std::ofstream f("test_debug.txt");
   #else
-  std::ofstream f("exe_release.txt");
+  std::ofstream f("test_release.txt");
   #endif
 
   BOOST_CHECK(add(1, 1) == 2);

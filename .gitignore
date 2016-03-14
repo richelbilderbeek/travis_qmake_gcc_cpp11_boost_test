@@ -40,3 +40,7 @@ travis_qmake_gcc_cpp11_boost_test_exe
 travis_qmake_gcc_cpp11_boost_test_test
 clean
 Makefile.*
+exe_debug.txt
+exe_release.txt
+test_release.txt
+test_debug.txt
