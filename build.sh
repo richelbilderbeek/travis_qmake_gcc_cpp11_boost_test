@@ -1,16 +1,16 @@
 #!/bin/bash
-qmake travis_qmake_gcc_cpp11_boost_test_exe.pro
+qmake travis_qmake_gcc_cpp11_boost_test.pro
 make debug
-./travis_qmake_gcc_cpp11_boost_test_exe
+./travis_qmake_gcc_cpp11_boost_test
 if [ ! -f exe_debug.txt ]
 then
   echo "ERROR: Cannot find exe_debug.txt"
   exit 1
 fi
 
-qmake travis_qmake_gcc_cpp11_boost_test_exe.pro
+qmake travis_qmake_gcc_cpp11_boost_test.pro
 make release
-./travis_qmake_gcc_cpp11_boost_test_exe
+./travis_qmake_gcc_cpp11_boost_test
 if [ ! -f exe_release.txt ]
 then
   echo "ERROR: Cannot find exe_release.txt"
