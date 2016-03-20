@@ -44,3 +44,4 @@ exe_debug.txt
 exe_release.txt
 test_release.txt
 test_debug.txt
+travis_qmake_gcc_cpp11_boost_test

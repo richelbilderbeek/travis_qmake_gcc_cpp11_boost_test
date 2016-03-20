@@ -1,11 +1,6 @@
 #include "my_functions.h"
-#include <fstream>
+#include <iostream>
 
 int main() {
-  #ifndef NDEBUG
-  std::ofstream f("exe_debug.txt");
-  #else
-  std::ofstream f("exe_release.txt");
-  #endif
-  f << add(40,2) << '\n';
+  std::cout << add(40,2) << '\n';
 }
