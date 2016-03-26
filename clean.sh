@@ -10,3 +10,5 @@ rm travis_qmake_gcc_cpp11_boost_test_test
 #rm exe_release.txt
 #rm test_debug.txt
 #rm test_release.txt
+rm -rf debug
+rm -rf release
