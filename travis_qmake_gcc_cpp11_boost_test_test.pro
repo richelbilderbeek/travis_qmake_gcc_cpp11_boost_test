@@ -11,10 +11,14 @@ SOURCES += my_functions.cpp
 SOURCES += main_test.cpp my_functions_test.cpp
 
 # C++11
-QMAKE_CXX = g++-5
-QMAKE_LINK = g++-5
-QMAKE_CC = gcc-5
-QMAKE_CXXFLAGS += -Wall -Wextra -Weffc++ -Werror -std=c++11
+unix {
+  QMAKE_CXX = g++-5
+  QMAKE_LINK = g++-5
+  QMAKE_CC = gcc-5
+}
+
+# Boost.Test does not go well with -Weffc++
+QMAKE_CXXFLAGS += -Wall -Wextra -Werror -std=c++11
 
 # Debug and release build
 CONFIG(release, debug|release) {
@@ -22,4 +26,27 @@ CONFIG(release, debug|release) {
 }
 
 # Boost.Test
-LIBS += -lboost_unit_test_framework
+win32 {
+  INCLUDEPATH += C:/boost_1_62_0
+  #LIBS += -LC:/boost_1_62_0/stage/lib
+  #LIBS += -LC:/boost_1_62_0
+  #LIBS += -LC:/boost_1_62_0/bin.v2
+  #LIBS += -LC:/boost_1_62_0/bin.v2/libs
+  #LIBS += -LC:/boost_1_62_0/bin.v2/libs/test
+  #LIBS += -LC:/boost_1_62_0/bin.v2/libs/test/build/gcc-mingw-4.9.3/debug/link-static/threading-multi
+  #LIBS += -lboost_unit_test_framework
+  #LIBS += -LC:/boost_1_62_0/stage/lib/
+  #LIBS += -lboost_unit_test_framework-mgw49-mt-d-1_62.a
+  #LIBS += "C:/boost_1_62_0/stage/lib/libboost_unit_test_framework-mgw49-mt-d-1_62.a"
+  LIBS += "C:/boost_1_62_0/stage/lib/libboost_unit_test_framework-mgw49-mt-1_62.a"
+  #LIBS += -LC:/boost_1_62_0/stage/lib/*.a
+  #LIBS += -LC:/boost_1_62_0/stage/lib/libboost_unit_test_framework-mgw49-mt-1_62.a
+  #LIBS += -LC:/boost_1_62_0/bin.v2/libs/test/build/gcc-mingw-4.9.3/debug/link-static/threading-multi/*.a
+  #LIBS += -LC:/boost_1_62_0/bin.v2/libs/test/build/gcc-mingw-4.9.3/release/link-static/threading-multi/*.a
+  #LIBS += -LC:/boost_1_62_0/bin.v2/libs/test/build/gcc-mingw-4.9.3/debug/link-static/threading-multi/libboost_unit_test_framework-mgw49-mt-d-1_62.a
+  QMAKE_CXXFLAGS += -fext-numeric-literals
+}
+
+unix {
+  LIBS += -lboost_unit_test_framework
+}
